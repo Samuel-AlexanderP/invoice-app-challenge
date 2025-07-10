@@ -30,7 +30,7 @@ A **React + TypeScript** mini-project for managing invoices entirely on the fron
 
    ```bash
    git clone https://github.com/Samuel-AlexanderP/invoice-app-challenge.git
-   cd invoice-pro
+   cd invoice-app
    ```
 
 2. **Install dependencies**
@@ -39,13 +39,23 @@ A **React + TypeScript** mini-project for managing invoices entirely on the fron
    npm install
    ```
 
-3. **Start development server**
+3. **Environment & Configuration**
+
+- Create a `.env` (copy `.env.sample`) at the project root with values like:
+
+  ```dotenv
+  # .env.sample
+  VITE_APP_NAME=InvoicePro
+  VITE_DEFAULT_CURRENCY=₱
+  ```
+
+4. **Start development server**
 
    ```bash
    npm run dev
    ```
 
-4. **Open** your browser at `http://localhost:5173`
+5. **Open** your browser at `http://localhost:5173`
 
 ---
 
@@ -71,25 +81,6 @@ src/
 ├─ types.ts                # TypeScript types
 ├─ App.tsx                 # Root router setup
 └─ main.tsx                # Entry, imports index.css
-```
-
----
-
-## 📝 Environment & Configuration
-
-Create a `.env` (copy `.env.sample`) at the project root with values like:
-
-```dotenv
-# .env.sample
-VITE_APP_NAME=InvoicePro
-VITE_DEFAULT_CURRENCY=₱
-```
-
-Access these variables in your code via `import.meta.env`:
-
-```ts
-// e.g. src/components/Layout.tsx
-const appName = import.meta.env.VITE_APP_NAME;
 ```
 
 ---
