@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 
 export function Footer() {
+  const title = import.meta.env.VITE_APP_NAME ?? "InvoicePro";
+
   return (
     <footer className="bg-secondaryBg dark:bg-secondaryBg-dark transition-colors w-full">
       <div className="mx-auto mt-auto flex min-h-[60px] max-w-[1920px] flex-col items-center justify-center gap-4 py-4">
@@ -20,7 +22,7 @@ export function Footer() {
             linkLabel="Contact dev"
           />
           <p className="m-auto font-lexend text-[0.7rem]">
-            © {new Date().getFullYear()} InvoicePro
+            © {new Date().getFullYear()} {title}
           </p>
         </div>
       </div>

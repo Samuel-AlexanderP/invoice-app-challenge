@@ -82,7 +82,8 @@ export default function InvoiceList() {
                     {inv.customer}
                   </td>
                   <td className="py-2 px-4 border-b border-border dark:border-border-dark text-primary dark:text-primary-dark">
-                    ₱{inv.total.toFixed(2)}
+                    {import.meta.env.VITE_DEFAULT_CURRENCY}
+                    {inv.total.toFixed(2)}
                   </td>
                   <td className="py-2 px-4 border-b border-border dark:border-border-dark space-x-2">
                     <button

@@ -87,7 +87,9 @@ function ProductRow({
           Subtotal
         </label>
         <div className="flex w-full px-3 py-2 rounded bg-tertiaryBg dark:bg-tertiaryBg-dark text-primary dark:text-primary-dark overflow-x-auto hide-scrollbar h-[42px]">
-          <span className="whitespace-nowrap">₱ {subtotal.toFixed(2)}</span>
+          <span className="whitespace-nowrap">
+            {import.meta.env.VITE_DEFAULT_CURRENCY} {subtotal.toFixed(2)}
+          </span>
         </div>
       </div>
       <button
@@ -284,7 +286,9 @@ export default function InvoiceForm() {
 
           {/* Total & Submit */}
           <div className="flex justify-between items-center">
-            <div className="text-lg font-bold">Total: ₱ {total.toFixed(2)}</div>
+            <div className="text-lg font-bold">
+              Total: {import.meta.env.VITE_DEFAULT_CURRENCY} {total.toFixed(2)}
+            </div>
             <button
               type="submit"
               className="px-6 py-2 bg-blue-600 dark:bg-accent text-white rounded hover:bg-blue-700 dark:hover:bg-accent-hover transition-colors"
