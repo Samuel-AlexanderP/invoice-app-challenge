@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Background layers */
+  --color-primaryBg: #ffffff; /* Main page background (light mode) */
+  --color-secondaryBg: #f9fafb; /* Card / panel background */
+  --color-tertiaryBg: #f3f4f6; /* Table rows, forms, etc. */
+
+  /* Dark‑mode backgrounds */
+  --color-primaryBg-dark: #1b1c1e; /* Main page background (dark mode) */
+  --color-secondaryBg-dark: #27282a; /* Card / panel background */
+  --color-tertiaryBg-dark: #2f3032; /* Table rows, forms, etc. */
+
+  /* Text colors */
+  --color-primary: #111827; /* Headings & body (light mode) */
+  --color-secondary: #4b5563; /* Subtext, captions */
+  --color-primary-dark: #e5e7eb; /* Headings & body (dark mode) */
+  --color-secondary-dark: #9ca3af; /* Subtext, captions */
+
+  /* Accent colors */
+  --color-accent: #fc6262; /* Buttons, links, highlights */
+  --color-accent-hover: #e64d5c; /* Hover state */
+  --color-secondaryAccent: #feb708; /* Secondary highlights */
+
+  /* Borders & dividers */
+  --color-border: #d1d5db; /* Light mode */
+  --color-border-dark: #3e3f41; /* Dark mode */
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE 10+ /
+  scrollbar-width: none;     / Firefox */
+}
