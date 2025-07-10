@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
 import type { Invoice } from "../../types";
+import { useToast } from "../../components/toastContext";
 
 const STORAGE_KEY = "invoices";
 
@@ -8,6 +9,7 @@ export default function InvoiceList() {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { showToast } = useToast();
 
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY) || "[]";
@@ -20,6 +22,7 @@ export default function InvoiceList() {
     const updated = invoices.filter((inv) => inv.id !== id);
     setInvoices(updated);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    showToast("Invoice deleted.", "error");
   };
 
   return (

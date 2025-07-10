@@ -5,6 +5,7 @@ import type { Invoice, Product } from "../../types";
 import { v4 as uuid } from "uuid";
 import { InputField } from "../../components/InputField";
 import { FaTrashAlt, FaPlusCircle } from "react-icons/fa";
+import { useToast } from "../../components/toastContext";
 
 const STORAGE_KEY = "invoices";
 
@@ -108,6 +109,7 @@ function ProductRow({
 export default function InvoiceForm() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   // state hooks
   const [number, setNumber] = useState("");
@@ -198,6 +200,10 @@ export default function InvoiceForm() {
       : [...stored, invoice];
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    showToast(
+      id ? "Invoice updated successfully!" : "Invoice created successfully!",
+      "success"
+    );
     navigate("/invoices");
   };
 
