@@ -206,7 +206,7 @@ export default function InvoiceForm() {
       id ? "Invoice updated successfully!" : "Invoice created successfully!",
       "success"
     );
-    navigate("/invoices");
+    navigate("/dashboard");
   };
 
   return (
