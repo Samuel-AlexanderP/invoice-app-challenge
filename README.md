@@ -30,7 +30,7 @@ A **React + TypeScript** mini-project for managing invoices entirely on the fron
 
    ```bash
    git clone https://github.com/Samuel-AlexanderP/invoice-app-challenge.git
-   cd invoice-app
+   cd invoice-app-challenge
    ```
 
 2. **Install dependencies**
