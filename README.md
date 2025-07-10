@@ -1,69 +1,105 @@
-# React + TypeScript + Vite
+# InvoicePro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + TypeScript** mini-project for managing invoices entirely on the frontend. Built with **Vite**, styled using **Tailwind CSS v4**, and includes:
 
-Currently, two official plugins are available:
+- **Authentication UI** (Register, Login, Logout) using `localStorage`
+- **Protected routes** with React Router
+- **CRUD interface** for invoices with Create, Read, Update, Delete
+- **Persistent storage** in `localStorage`
+- **Dynamic product rows**, real-time subtotal & total calculation
+- **Form validation** and inline error handling
+- **Dark mode** toggle with CSS-first theming
+- **Toast notifications** for user feedback
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** + **TypeScript**
+- **Vite** (build and dev server)
+- **Tailwind CSS v4** (CSS-first theming via `@theme`)
+- **React Router v6** (client-side routing)
+- **Headless UI** (transition for toast)
+- **React Icons** (Font Awesome icons)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📦 Installation & Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/Samuel-AlexanderP/invoice-app-challenge.git
+   cd invoice-pro
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open** your browser at `http://localhost:5173`
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+├─ components/
+│  ├─ InputField.tsx       # Reusable form input
+│  ├─ Layout.tsx           # App layout with header/footer
+│  ├─ Navbar.tsx           # Responsive navigation with dark toggle
+│  ├─ ToastContext.tsx     # Toast provider & hook
+│  └─ ...
+├─ hooks/
+│  └─ useDarkMode.ts       # Dark mode management
+├─ pages/
+│  ├─ Welcome.tsx
+│  ├─ Register.tsx
+│  ├─ Login.tsx
+│  ├─ dashboard/
+│  │  ├─ InvoiceList.tsx
+│  │  └─ InvoiceForm.tsx
+├─ types.ts                # TypeScript types
+├─ App.tsx                 # Root router setup
+└─ main.tsx                # Entry, imports index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 Environment & Configuration
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Create a `.env` (copy `.env.sample`) at the project root with values like:
+
+```dotenv
+# .env.sample
+VITE_APP_NAME=InvoicePro
+VITE_DEFAULT_CURRENCY=₱
 ```
+
+Access these variables in your code via `import.meta.env`:
+
+```ts
+// e.g. src/components/Layout.tsx
+const appName = import.meta.env.VITE_APP_NAME;
+```
+
+---
+
+## ⚙️ Scripts
+
+- `npm run dev` — start Vite dev server
+- `npm run build` — build for production
+- `npm run preview` — preview production build locally
+
+## 👨‍💻 Author
+
+Samuel Alexander Prado
