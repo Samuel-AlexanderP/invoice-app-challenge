@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
   return (
     <Layout>
-      <div className="text-center space-y-6">
-        <h2 className="text-4xl font-extrabold text-primary dark:text-primary-dark">
+      <div className="text-center text-base sm:text-lg space-y-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary dark:text-primary-dark">
           Welcome to InvoicePro
         </h2>
-        <p className="text-lg text-secondary dark:text-secondary-dark">
+        <p className="text-secondary dark:text-secondary-dark">
           The simplest way to create and manage your invoices—no backend
           required.
         </p>
-        <div className="space-x-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/register"
             className="
