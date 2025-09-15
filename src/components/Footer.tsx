@@ -10,13 +10,13 @@ export function Footer() {
       <div className="mx-auto mt-auto flex min-h-[60px] max-w-[1920px] flex-col items-center justify-center gap-4 py-4">
         <div className="flex items-center gap-4 text-primary dark:text-primary-dark transition">
           <FooterLink
-            className=" hover:text-accent"
+            className="hover:text-blue-700 dark:hover:text-accent"
             icon={<FaGithub />}
             href="https://github.com/Samuel-AlexanderP/invoice-app-challenge"
             linkLabel="See code"
           />{" "}
           <FooterLink
-            className=" hover:text-accent"
+            className="hover:text-blue-700 dark:hover:text-accent"
             icon={<FaPhoneAlt />}
             href="mailto:prado16alex@gmail.com"
             linkLabel="Contact dev"
