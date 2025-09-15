@@ -12,7 +12,7 @@ export function Footer() {
           <FooterLink
             className=" hover:text-accent"
             icon={<FaGithub />}
-            href="https://github.com/Samuel-AlexanderP"
+            href="https://github.com/Samuel-AlexanderP/invoice-app-challenge"
             linkLabel="See code"
           />{" "}
           <FooterLink
